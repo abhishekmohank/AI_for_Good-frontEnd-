@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Homepage.css'; // Make sure to create and link your CSS file
+import ChatBox from './ChatBox';
 
 const HomePage = () => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -52,6 +53,7 @@ const HomePage = () => {
             <button onClick={handleUpload}>Upload</button>
           </div>
         )}
+         <ChatBox />
       </div>
     </div>
   );
