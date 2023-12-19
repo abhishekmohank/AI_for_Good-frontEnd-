@@ -1,50 +1,50 @@
 /* HomePage.css */
 
 .homepage-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
-  
-  .homepage-box {
-    background: #f5f5f5;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    
-    width: 350px; /* Set your desired width */
-    height: 350px; /* Set your desired height */
-  }
-  
-  .homepage-header {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .homepage-form label {
-    display: block;
-    margin-bottom: 10px;
-  }
-  
-  .homepage-form input[type="file"] {
-    width: 93%;
-    padding: 8px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-  }
-  
-  .homepage-form button {
-    background: #3498db;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 100%;
-  }
-  
-  .homepage-form button:hover {
-    background: #2980b9;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.homepage-box {
+  background: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px; /* Adjust width as needed */
+  height: 300px; /* Adjust height as needed */
+  margin: 20px;
+}
+
+.homepage-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.homepage-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.homepage-form input[type="file"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.homepage-form button {
+  background: #3498db;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.homepage-form button:hover {
+  background: #2980b9;
+}
