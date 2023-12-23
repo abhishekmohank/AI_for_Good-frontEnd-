@@ -7,19 +7,35 @@
     height: 100vh;
   }
   
+  .chatbox-container {
+    /* Set the width and height of the chat box */
+    width: 90%;  /* Adjust to your desired width */
+    height: 90%;  /* Adjust to your desired height */
+
+    /* ... other styles ... */
+  }
+
   .homepage-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     background: #f5f5f5;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     
-    width: 350px; /* Set your desired width */
-    height: 350px; /* Set your desired height */
+    width: 1200px; /* Set your desired width */
+    height: 500px; /* Set your desired height */
   }
   
   .homepage-header {
-    text-align: center;
-    margin-bottom: 20px;
+    color: #bedef2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 20px;
+    font-size: 8px;
   }
   
   .homepage-form label {
@@ -28,6 +44,7 @@
   }
   
   .homepage-form input[type="file"] {
+    
     width: 93%;
     padding: 8px;
     margin-bottom: 20px;
@@ -48,3 +65,23 @@
   .homepage-form button:hover {
     background: #2980b9;
   }
+
+  .homepage-form {
+    position: absolute;
+    bottom: 0;
+    left: 10;
+    margin: 10px;
+}
+
+.file-input-container {
+  position: relative; /* or absolute, depending on your needs */
+  top: 0px; /* adjust as needed */
+  left: 0px; /* adjust as needed */
+}
+
+.file-upload-container {
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

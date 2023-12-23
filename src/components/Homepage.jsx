@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './Homepage.css'; // Make sure to create and link your CSS file
 import ChatBox from './ChatBox';
+import axios from 'axios';
 
 const HomePage = () => {
   const [selectedFile, setSelectedFile] = useState(null);
+  const fileInputRef = useRef();
 
   const handleFileDrop = (e) => {
     e.preventDefault();
@@ -16,12 +18,25 @@ const HomePage = () => {
     setSelectedFile(file);
   };
 
-  const handleUpload = () => {
-    // Add your file upload logic here
+  const handleUpload = async () => {
     if (selectedFile) {
-      console.log('Uploading file:', selectedFile);
-      // You can perform the actual file upload here
+      const formData = new FormData();
+      formData.append('file', selectedFile);
+
+      try {
+        const response = await axios.post('http://127.0.0.1:8000/uploadpdf/', formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          }
+        });
+        console.log(response.data);
+        alert(response.data)
+        setSelectedFile(null)
+      } catch (error) {
+        console.error(error);
+      }
     } else {
+      alert("No file selected for upload")
       console.log('No file selected for upload');
     }
   };
@@ -38,21 +53,19 @@ const HomePage = () => {
           onDragOver={(e) => e.preventDefault()}
           onDrop={handleFileDrop}
         >
-          <p>Drag & Drop a file here</p>
-        </div>
-
-        <input
-          type="file"
-          accept=".jpg, .jpeg, .png, .gif"
-          onChange={handleFileUpload}
-        />
-
-        {selectedFile && (
-          <div>
-            <p>Selected File: {selectedFile.name}</p>
-            <button onClick={handleUpload}>Upload</button>
+          <div className="file-upload-container">
+            <input
+              type="file"
+              accept=".pdf"
+              onChange={handleFileUpload}
+              ref={fileInputRef}
+            />
+            {selectedFile && (
+              <button onClick={handleUpload}>Upload</button>
+            )}
           </div>
-        )}
+          <p>Or drag & drop a file here</p>
+        </div>
          <ChatBox />
       </div>
     </div>

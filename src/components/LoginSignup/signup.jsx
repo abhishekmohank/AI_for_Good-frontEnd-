@@ -2,18 +2,40 @@
 
 import React, { useState } from 'react';
 import './signup.css'; // Make sure to create and link your CSS file
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const Signup = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmpassword, setconfirmPassword] = useState('');
+  const navigate = useNavigate();
 
-  const handleSignup = () => {
-    // Add your signup logic here
-    console.log('Signing up with:', { username, password });
-    // Redirect or perform additional actions after successful signup
+  const handleSignup = async () => {
+    // console.log('Signing up with:', { username, password });
+  
+    if (password !== confirmpassword) {
+      alert('Password and confirm password should be the same.');
+    }
+    else{
+      const user = {
+        username: username,
+        password: password
+      };
+
+      try {
+          const response = await axios.post('http://127.0.0.1:8000/signup/', user);
+          console.log(response.data);
+          alert('Sign Up Successfull');
+          navigate("/");
+      } catch (error) {
+          console.error(error);
+      }
+      
+    }
   };
+  
+  
 
   return (
     <div className='signup-container'>
