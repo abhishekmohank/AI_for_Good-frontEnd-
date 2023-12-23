@@ -1,50 +1,98 @@
-/* HomePage.css */
+/* App.css */
 
 .homepage-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
-  
-  .homepage-box {
-    background: #f5f5f5;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    
-    width: 350px; /* Set your desired width */
-    height: 350px; /* Set your desired height */
-  }
-  
-  .homepage-header {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .homepage-form label {
-    display: block;
-    margin-bottom: 10px;
-  }
-  
-  .homepage-form input[type="file"] {
-    width: 93%;
-    padding: 8px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-  }
-  
-  .homepage-form button {
-    background: #3498db;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 100%;
-  }
-  
-  .homepage-form button:hover {
-    background: #2980b9;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.homepage-box {
+  background: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 350px; /* Set your desired width */
+  height: 350px; /* Set your desired height */
+}
+
+.homepage-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.homepage-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.homepage-form input[type="file"] {
+  width: 93%;
+  padding: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.homepage-form button {
+  background: #3498db;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.homepage-form button:hover {
+  background: #2980b9;
+}
+
+.chat-bot {
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.chat-window {
+  height: 300px;
+  overflow-y: scroll;
+  padding: 10px;
+}
+
+.message {
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.user {
+  background-color: #dff1ff;
+}
+
+.bot {
+  background-color: #e0f7fa;
+}
+
+.input-container {
+  display: flex;
+  padding: 10px;
+}
+
+input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+
+button {
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4caf50;
+  color: #fff;
+  cursor: pointer;
+}

@@ -1,11 +1,15 @@
-import React, { useState } from 'react';
-import './Homepage.css'; // Make sure to create and link your CSS file
-import ChatBox from './ChatBox';
-import axios from 'axios';
+// App.js
 
-const HomePage = () => {
+import React, { useState, useRef } from 'react';
+import './Homepage.css';
+import axios from 'axios';
+import ChatBot from './ChatBox'; // Assuming ChatBot and App.js are in the same directory
+
+const App = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const fileInputRef = useRef();
+  const [messages, setMessages] = useState([]);
+  const [inputText, setInputText] = useState('');
 
   const handleFileDrop = (e) => {
     e.preventDefault();
@@ -41,8 +45,22 @@ const HomePage = () => {
     }
   };
 
+  const handleInputChange = (e) => {
+    setInputText(e.target.value);
+  };
+
+  const handleSendMessage = () => {
+    if (inputText.trim() !== '') {
+      setMessages([...messages, { text: inputText, type: 'user' }]);
+      // Here you would typically send the user's message to the chat bot API
+      // and handle the response. For simplicity, we'll just echo the user's message.
+      setMessages([...messages, { text: `You said: ${inputText}`, type: 'bot' }]);
+      setInputText('');
+    }
+  };
+
   return (
-    <div className="homepage-container">
+    <div className="app-container">
       <div className="homepage-box">
         <div className="homepage-header">
           <h1>AI for Good</h1>
@@ -66,10 +84,16 @@ const HomePage = () => {
           </div>
           <p>Or drag & drop a file here</p>
         </div>
-         <ChatBox />
+
+        <ChatBot
+          messages={messages}
+          inputText={inputText}
+          onInputChange={handleInputChange}
+          onSendMessage={handleSendMessage}
+        />
       </div>
     </div>
   );
 };
 
-export default HomePage;
+export default App;
